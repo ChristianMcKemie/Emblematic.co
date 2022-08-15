@@ -1,7 +1,7 @@
 <template>
-  <div id="Logo">
+  <div id="z-container">
     <svg
-      class="logo"
+      class="z-logo"
       id="a"
       xmlns="http://www.w3.org/2fff/svg"
       viewBox="0 0 646.47 89.44"
@@ -45,56 +45,23 @@
 </template>
 
 <script>
+import Zdog from "Zdog";
+import { MorphSVGPlugin } from "/plugins/MorphSVGPlugin";
 export default {
-  mounted() {
-    let constrain = 20;
-    let mouseOverContainer = document.getElementById("__nuxt");
-    let ex1Layer = document.getElementById("hero-container");
-
-    function transforms(x, y, el) {
-      let box = el.getBoundingClientRect();
-      let calcX = -(y - box.y - box.height / 2) / constrain;
-      let calcY = (x - box.x - box.width / 2) / constrain;
-
-      return (
-        "perspective(100vw) " +
-        "   rotateX(" +
-        calcX +
-        "deg) " +
-        "   rotateY(" +
-        calcY +
-        "deg) "
-      );
-    }
-
-    function transformElement(el, xyEl) {
-      el.style.transform = transforms.apply(null, xyEl);
-    }
-
-    mouseOverContainer.onmousemove = function (e) {
-      let xy = [e.clientX, e.clientY];
-      let position = xy.concat([ex1Layer]);
-
-      window.requestAnimationFrame(function () {
-        transformElement(ex1Layer, position);
-      });
-    };
-  },
+  mounted() {},
 };
 </script>
 
-
 <style lang="scss">
-div {
-  width: 100%;
+div#z-container {
+  width: 400px;
   display: block;
 }
-.logo {
+.z-logo {
   fill: transparent;
   display: block;
   margin: auto;
-  margin-top: calc(50vh - 100px);
-  width: 80vw;
+  width: 100%;
 
   * {
     fill: white;

@@ -72,12 +72,11 @@ export default {
 
 .vueCursor {
   transition: transform 100ms;
-  border: 1px solid #f00;
+  border: 1px solid #000;
 }
 
 .vueCursor--Small {
   background-color: #aaa;
 }
 </style>
-
 

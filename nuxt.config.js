@@ -1,15 +1,20 @@
 export default {
   // Disable server-side rendering: https://go.nuxtjs.dev/ssr-mode
   ssr: false,
-  //target: 'static',
   // Global page headers: https://go.nuxtjs.dev/config-head
   head: {
-    title: 'Emblematic',
+    title: 'Emblematic | A digital agency focused on web.',
+    htmlAttrs: {
+      lang: 'en'
+    },
     meta: [
       { charset: 'utf-8' },
       { name: 'viewport', content: 'width=device-width, initial-scale=1' },
-      { hid: 'description', name: 'description', content: '' },
-      { name: 'format-detection', content: 'telephone=no' }
+      { hid: 'description', name: 'description', content: "We're a small team of designers and developers passionate about building on the edge of what's possible. Let's create the next generation in your companies digital future." },
+      { name: 'format-detection', content: 'telephone=no' },
+      { name: 'robots', content: "index follow" },
+      { name: 'author', content: "Emblematic" },
+      { name: 'publisher', content: "Emblematic" }
     ],
     link: [
       { rel: 'icon', type: 'image/png', href: '/favicon.png?v2' }
@@ -31,6 +36,8 @@ export default {
   buildModules: [
     // https://go.nuxtjs.dev/typescript
     '@nuxt/typescript-build',
+    "@nuxtjs/svg",
+    '@nuxtjs/google-analytics'
   ],
 
   // Modules: https://go.nuxtjs.dev/config-modules
@@ -41,7 +48,12 @@ export default {
     //'@nuxtjs/pwa',
     // https://go.nuxtjs.dev/content
     '@nuxt/content',
+    '@nuxtjs/sitemap'
   ],
+
+  googleAnalytics: {
+    id: 'UA-156895040-2'
+  },
 
   // Axios module configuration: https://go.nuxtjs.dev/config-axios
   axios: {
@@ -49,12 +61,17 @@ export default {
     baseURL: '/',
   },
 
-  // PWA module configuration: https://go.nuxtjs.dev/pwa
-  pwa: {
-    manifest: {
-      lang: 'en'
-    }
+  sitemap: {
+    hostname: 'https://emblematic.co',
   },
+
+  // PWA module configuration: https://go.nuxtjs.dev/pwa
+  // pwa: {
+  //   manifest: {
+  //     dir: 'ltr',
+  //     lang: 'en-US'
+  //   }
+  // },
 
   // Content module configuration: https://go.nuxtjs.dev/config-content
   content: {},

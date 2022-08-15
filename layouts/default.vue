@@ -7,6 +7,18 @@
 </template>
 
 <script>
+export default {
+  head() {
+    return {
+      link: [
+        {
+          rel: "canonical",
+          href: "https://emblematic.co" + this.$route.path,
+        },
+      ],
+    };
+  },
+};
 </script>
 
 <style lang="scss">

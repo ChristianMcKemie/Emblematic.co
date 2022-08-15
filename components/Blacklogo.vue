@@ -46,7 +46,7 @@
 </template>
 <style lang="scss">
 .logo-div {
-  top: 4px;
+  top: 0px;
   position: fixed;
   width: 100%;
   z-index: 1;
@@ -55,7 +55,14 @@
   // @media screen and (max-width: 800px) {
   //   height: 24vw;
   // }
-  background: white;
+  background: rgb(255, 255, 255);
+  // background: linear-gradient(
+  //   180deg,
+  //   rgba(255, 255, 255, 1) 0%,
+  //   rgba(255, 255, 255, 0.8) 40%,
+  //   rgba(255, 255, 255, 0) 100%
+  // );
+
   display: block;
   opacity: 0;
 }
@@ -67,7 +74,7 @@
   padding: 25px;
   width: 15vw;
   @media screen and (max-width: 800px) {
-    width: 80vw;
+    width: 100vw;
     padding: 25px 10vw;
   }
 
